@@ -1,16 +1,16 @@
 let lastTimeMsec = null;
-let template = new Template();
+let three = new Template();
 let collada = new Collada();
 let ar = new AR();
 
 const init = () => {
-    template.init();
+    three.init();
     collada.load(''); //load collada here
-    ar.init(template.renderer, template.scene, template.camera);
+    ar.init(three.renderer, three.scene, three.camera);
     animate();
     //init code extended below this
     
-    ar.setMarker(scene, 'coral.patt');
+    ar.setMarker(three.scene, 'coral.patt');
 }
 
 const animate = nowMsec => {
