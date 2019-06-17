@@ -17,6 +17,7 @@ const animate = nowMsec => {
     requestAnimationFrame(animate);
     ar.update(nowMsec, lastTimeMsec);
     //animate code extended below this
+    
 }
 
 init();
