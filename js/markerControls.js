@@ -1,4 +1,4 @@
-class Marker {
+class markerControls {
     constructor(scene, kitContext, src) {
         this.root = new THREE.Group
         scene.add(this.root)
