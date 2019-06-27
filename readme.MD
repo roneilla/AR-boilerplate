@@ -42,3 +42,11 @@ const init = () => {
     collada.load('path/to/file');
 }
 ```
+
+#### Setting Pattern Aspect Ratio
+
+```HTML
+    <title>AR-Boilter Plate</title>
+    <script>var patternRatio = 0.9;</script> //Before Calling any libraries, give a value to patternRatio
+    <script src="lib/three.min.js"></script>
+```
