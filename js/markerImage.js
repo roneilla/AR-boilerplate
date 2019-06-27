@@ -25,5 +25,4 @@ class markerImage {
         x != undefined && y == undefined && z == undefined ? (y=x, z=x) : 0;
         this.sprite.which.set(x, y, z);
     }
-
 }
