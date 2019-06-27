@@ -9,7 +9,8 @@ Other libraries used:
 - ColladaLoader.js
 
 # Documentation
-#### Initalization
+
+## Initalization
 ```Javascript
 let lastTimeMsec = null;
 let three = new Template();
@@ -19,7 +20,7 @@ const init = () => {
     three.init();
     ar.init(three.renderer, three.scene, three.camera);
     animate();
-    ar.setMarker(three.scene, 'coral.patt');
+    ar.setMarker(three.scene, 'path/to/patt');
 }
 
 const animate = nowMsec => {
@@ -27,4 +28,17 @@ const animate = nowMsec => {
     ar.update(nowMsec, lastTimeMsec);
 }
 init();
+```
+
+## Features
+
+#### Adding a Collada
+
+```Javascript
+let collada = new Collada();
+
+const init = () => {
+    ...(init code)
+    collada.load('path/to/file');
+}
 ```
