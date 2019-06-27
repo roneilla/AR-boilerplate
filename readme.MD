@@ -38,7 +38,7 @@ init();
 let collada = new Collada();
 
 const init = () => {
-    ...(init code)
+    //...init-code
     collada.load('path/to/file');
 }
 ```
