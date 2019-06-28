@@ -1,10 +1,10 @@
 class Collada {
     constructor() {
-        this.loader = new THREE.ColladaLoader();       
+        this.loader = new THREE.ColladaLoader();      
     }
-    load(src) {
+    load(ar, src) {
         this.loader.load(src, collada => {
-            ar.add(collada.scene);
+            ar.addObject(collada.scene);
             const details = model.getObjectByName("details", true);
         })
     }

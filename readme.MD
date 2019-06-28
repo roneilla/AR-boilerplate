@@ -6,6 +6,7 @@ Simplifying ARjs and THREEjs.
 <br>
 Other libraries used:
 <br>
+- Three.js
 - ColladaLoader.js
 
 # Documentation
@@ -72,7 +73,10 @@ const init = () => {
 #### Setting Pattern Aspect Ratio
 
 ```HTML
-    <title>AR-Boilter Plate</title>
-    <script>var patternRatio = 0.9;</script> //Before Calling any libraries, give a value to patternRatio
-    <script src="lib/three.min.js"></script>
+    <head>
+        <title>AR-Boilter Plate</title>
+        <!--Before Calling any libraries, give a value to patternRatio-->
+        <script>var patternRatio = 0.9;</script>
+        <script src="lib/three.min.js"></script>
+    </head>
 ```
