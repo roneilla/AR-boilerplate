@@ -22,5 +22,7 @@ class Template {
         this.scene.add(this.camera);
         this.camera.position.set(0, 0, 10);
     }
-    add(obj) {this.scene.add(obj)}
+    add(obj) {
+        this.scene.add(obj)
+    }
 }

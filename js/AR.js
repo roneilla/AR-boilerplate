@@ -1,21 +1,20 @@
 THREEx.ArToolkitContext.baseURL = '/';
 class AR {
-    constructor(markerPatterns) {
+    constructor() {
         this.context;
         this.source = new THREEx.ArToolkitSource({sourceType: 'webcam'});
         this.marker;
         this.customMarker = new THREE.Group;
         this.onRender = [];
+        //flags
+        this.isMarkerVisible = false;
     }
     init(renderer, scene, camera) {
         this.setSource(renderer);
         this.setContext(camera);
-        this.onRender.push(() => {
-            if (this.source.ready === false) return
-            this.context.update(this.source.domElement)
-        });
+        this.onRender.push(() => !this.source.ready === false ? this.context.update(this.source.domElement) : null)
         this.onRender.push(function () {});
-        this.onRender.push(function () { renderer.render(scene, camera) });
+        this.onRender.push(() => renderer.render(scene, camera));
     }
     setContext(camera) {
         const scope = this;
@@ -44,12 +43,13 @@ class AR {
         this.marker = new THREEx.ArMarkerControls(
             this.context,
             this.customMarker,
-            {type: 'pattern', patternUrl: 'data/' + src}
+            {type: 'pattern', patternUrl: src}
         );
     }
-    add(obj) {this.customMarker.add(obj)}
-    attachSprite(sprite) {
-        this.customMarker = new THREE.Group;
+    addObject(obj) {
+        this.customMarker.add(obj);
+    }
+    addMedia(sprite) {
         this.customMarker.add(sprite);
     }
     update(nowMsec, lastTimeMsec) {
@@ -58,5 +58,6 @@ class AR {
         lastTimeMsec = nowMsec;
         const pulse = Date.now() * 0.0009;
         this.onRender.forEach(el => el(deltaMsec/1000, nowMsec/1000));
+        this.isMarkerVisible = this.customMarker.visible;
     }
 }

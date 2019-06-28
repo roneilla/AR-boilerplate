@@ -1,2 +1,5 @@
-_dev
 .DS_Store
+assets/
+js/user.js
+user.html
+data/

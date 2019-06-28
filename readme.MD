@@ -32,6 +32,32 @@ init();
 
 ## Features
 
+#### Flags
+
+```Javascript
+ar.isMarkerVisible //returns true, if the marker is visible
+```
+
+#### Adding an Image
+
+```Javascript
+let landscape = new MarkerImage('path/to/file');
+
+const init = () => {
+    //...init-code
+    landscape.setSize(x, y, z);
+    landscape.setPosition(x, y, z);
+    landscape.setRotation(x, y, z);
+    // Can also use 1 value for all three axis
+}
+
+const animate = () => {
+    //...animate-code
+    ar.addMedia(landscape.image);
+}
+//you can access image attributes by simply calling landscape.image.scale.x and so on
+```
+
 #### Adding a Collada
 
 ```Javascript
