@@ -1,25 +1,58 @@
 <!DOCTYPE html>
-<html lang="">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <script src="lib/three.min.js"></script>
-    <script src="lib/colladaLoader.js"></script>
-    <script src="lib/vendor/jsartoolkit5/build/artoolkit.min.js"></script>
-    <script src="lib/vendor/jsartoolkit5/js/artoolkit.api.js"></script>
-    <script src="lib/threex-arbasecontrols.js"></script>
-    <script src="lib/threex-armarkercontrols.js"></script>
-    <script src="lib/threex-arsmoothedcontrols.js"></script>
-    <script src="lib/threex-artoolkitcontext.js"></script>
-    <script src="lib/threex-artoolkitsource.js"></script>
-</head>
+
+<script>
+    // change pattern ratio here 
+    var patternRatio = 0.9;
+
+</script>
+
+<!-- include three.js library -->
+<script src='vendor/js/three.js'></script>
+<script src='vendor/js/ColladaLoader.js'></script>
+<script src='vendor/js/tracking.js'></script>
+<script src='vendor/js/tween.min.js'></script>
+
+<!-- include jsartookit -->
+<script src="vendor/jsartoolkit5/artoolkit.min.js"></script>
+<script src="vendor/jsartoolkit5/artoolkit.api.js"></script>
+
+<!-- include threex.artoolkit -->
+<script src="vendor/threex/threex-artoolkitsource.js"></script>
+<script src="vendor/threex/threex-artoolkitcontext.js"></script>
+<script src="vendor/threex/threex-arbasecontrols.js"></script>
+<script src="vendor/threex/threex-armarkercontrols.js"></script>
+
+<script>
+    THREEx.ArToolkitContext.baseURL = '/'
+
+</script>
+
+<link rel="stylesheet" href="css/index.css">
 
 <body>
-    <script src="js/Template.js"></script>
-    <script src="js/collada.js"></script>
-    <script src="js/AR.js"></script>
-    <script src="js/main.js"></script>
+   
+    <!-- components library -->
+    <script src="lib/components.js"></script>
+
+    <!-- declare your global variables in this script file -->
+    <script src="lib/global.js"></script>
+
+    <!-- video player functions -->
+    <script src="lib/playVideo.js"></script>
+
+    <!-- initialize -->
+    <script src="lib/initialize.js"></script>
+
+    <!-- add script in here -->
+    <script src="lib/main.js"></script>
+
+    <!-- add animations in this script file -->
+    <script src="lib/animate.js"></script>
+
+    <script>
+        init();
+    </script>
+
 </body>
-</html>
